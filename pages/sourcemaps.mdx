@@ -1,0 +1,49 @@
+import Image from 'next/image'
+
+# Source Maps
+
+To translate a stack trace from bundled code to its original position and obtain meaningful information,
+you need to provide source maps (see https://web.dev/source-maps/).
+
+First, ensure that source maps are generated during the build phase. In your build directory, there should be a file ending with `.map`.
+For example, for a React build, the output looks like this:
+
+```shell
+main.c1411ba0.js
+main.c1411ba0.js.map
+```
+
+If you don't see such files, please refer to your build tool's documentation.
+
+## Uploading source maps
+
+The easiest way is to install the WatchCat CLI tool:
+
+```shell
+npm install @watchcathq/cli --save-dev
+```
+
+This tool will recursively search for maps in the specified directory and upload them for a given application, determined by the provided token. The token can be found in the application details at https://app.watchcat.io/applications.
+
+```
+watchcat sourcemap [app_token] [directory]
+```
+
+Once the source maps are uploaded, you should see a stack trace leading to the original source, and you can quickly identify where the issue lies.
+
+### Example
+
+```shell
+watchcat sourcemap app_12345 build/
+```
+
+In the example above, `app_12345` is the application token, and `build/` is the directory where the command will recursively search for source maps to upload.
+
+## List of uploaded source maps
+
+You can find a list and the upload dates in the application details at the bottom of the page. To view this:
+1. Log in to https://app.watchcat.io.
+2. Select `Applications` from the menu on the right.
+3. Choose the application for which you wish to see the source maps.
+
+<Image className="nx-mt-8" src="/sourcemaps.png" alt="Sourcemaps list" width="1000" height="400" />

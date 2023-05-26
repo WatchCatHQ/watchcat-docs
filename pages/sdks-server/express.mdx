@@ -1,0 +1,51 @@
+import {Tab, Tabs} from 'nextra-theme-docs'
+
+# Express.js
+
+## Installation and Usage
+
+To install the package, use your preferred package manager:
+
+```shell
+npm install @watchcathq/express
+yarn add @watchcathq/express
+```
+
+Once you have installed the package, you need to set it up by importing the package
+and initializing it with your application token:
+
+<Tabs items={['ESM', 'CommonJS']}>
+    <Tab>
+        ```javascript
+        import WatchCat from "@watchcathq/express";
+
+        WatchCat.init({
+            token: "APP_TOKEN"
+        })
+        ```
+    </Tab>
+    <Tab>
+        ```javascript
+        const WatchCat = require("@watchcathq/express").default;
+
+        WatchCat.init({
+            token: "APP_TOKEN"
+        })
+        ```
+    </Tab>
+</Tabs>
+
+Next, you need to set up the error handler. Apply it after all routers as the last middleware:
+
+```javascript
+// Your routes are here
+
+app.use(WatchCat.errorHandler)
+
+// Start server via app.listen
+```
+
+## Links
+
+- __Github__: https://github.com/WatchCatHQ/watchcat-javascript/tree/main/packages/express
+- __NPM__: https://www.npmjs.com/package/@watchcathq/express

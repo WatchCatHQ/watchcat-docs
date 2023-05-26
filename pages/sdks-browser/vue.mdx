@@ -1,0 +1,63 @@
+# Vue
+
+## Installation and Usage
+
+To install the package, use your preferred package manager:
+
+```shell
+npm install @watchcathq/vue
+yarn add @watchcathq/vue
+```
+
+## Basic usage
+
+To set up the package, import it and initialize it with your application token:
+
+```javascript
+import WatchCat from "@watchcathq/vue";
+
+WatchCat.init({
+    token: "APP_TOKEN"
+})
+```
+
+## Error Handler
+
+Assign a global handler for uncaught errors propagating from within the application:
+
+```javascript
+// app init
+
+app.config.errorHandler = WatchCat.errorHandler
+
+// app mount
+```
+
+## Logging
+
+Use the following methods to log warnings, errors, and exceptions:
+
+```javascript
+WatchCat.warn('warning message');
+WatchCat.error('error message');
+WatchCat.exception(new Error('exception message'));
+```
+
+You can also add custom, application-related information:
+
+```javascript
+WatchCat
+    .withApplication({
+        userId: 1234
+    })
+    .error('error message');
+```
+
+## Source Maps
+
+See [Source maps](/sourcemaps)
+
+## Links
+
+- __Github__: https://github.com/WatchCatHQ/watchcat-javascript/tree/main/packages/vue
+- __NPM__: https://www.npmjs.com/package/@watchcathq/vue

@@ -1,0 +1,61 @@
+# React SDK
+
+## Installation and Usage
+
+To install the package, use your preferred package manager:
+
+```shell
+npm install @watchcathq/react
+yarn add @watchcathq/react
+```
+
+## Basic usage
+
+To set up the package, import it and initialize it with your application token:
+
+```javascript
+import WatchCat from "@watchcathq/react";
+
+WatchCat.init({
+    token: "APP_TOKEN"
+})
+```
+
+Wrap your application with the `WatchCat.ErrorBoundary` component and specify the `fallback` component that will be displayed in case of an error:
+
+https://reactjs.org/docs/error-boundaries.html
+
+```tsx
+<WatchCat.ErrorBoundary fallback={fallback}>
+    <YourApplication />
+</WatchCat.ErrorBoundary>
+```
+
+## Logging
+
+Use the following methods to log warnings, errors, and exceptions:
+
+```javascript
+WatchCat.warn('warning message');
+WatchCat.error('error message');
+WatchCat.exception(new Error('exception message'));
+```
+
+You can also add custom, application-related information:
+
+```javascript
+WatchCat
+    .withApplication({
+        userId: 1234
+    })
+    .error('error message');
+```
+
+## Source Maps
+
+See [Source maps](/sourcemaps)
+
+## Links
+
+- __Github__: https://github.com/WatchCatHQ/watchcat-javascript/tree/main/packages/react
+- __NPM__: https://www.npmjs.com/package/@watchcathq/react

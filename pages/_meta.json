@@ -1,0 +1,20 @@
+{
+  "index": "Introduction",
+  "getting-started": "Getting started",
+  "sdks-browser": "Browser SDKs",
+  "sdks-server": "Server SDKs",
+  "sourcemaps": "Source Maps",
+  "typescript": "Typescript",
+  "watchcat_web": {
+    "title": "Go to Web",
+    "href": "https://watchcat.io",
+    "type": "page",
+    "newWindow": true
+  },
+  "watchcat_app": {
+    "title": "Go to App",
+    "href": "https://app.watchcat.io",
+    "type": "page",
+    "newWindow": true
+  }
+}

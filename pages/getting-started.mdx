@@ -1,0 +1,42 @@
+# Getting Started
+
+Let's begin by understanding the key concepts.
+
+## Application
+
+An Application in WatchCat represents your unique service or application. For instance, you might have distinct projects for your backend API and your frontend client.
+
+Each application gets its own card on the Dashboard where you can monitor its overall health.
+
+### Creating a New Application
+
+To create a new application:
+
+1. Log in to https://app.watchcat.io.
+2. Select `Applications` from the menu on the right.
+3. Click the `Create application` button.
+4. Enter a name for your application and select your stack.
+
+After the application is created, you can follow the installation instructions
+or consult the documentation for the selected SDK.
+
+## Event
+
+An Event refers to any issue that occurs in your application, such as an error, a warning,
+or an unhandled exception.
+
+## Monitor
+
+A Monitor checks the availability and performs other granular checks on a given URL. It can be assigned to an application, in which case it appears on the application card on the Dashboard. This allows you to view the status of all your applications in one place.
+
+You can also create a standalone monitor. It will be displayed on the Dashboard under the `Standalone monitors` section at the bottom of the page.
+
+### Creating a New Monitor
+
+To create a new monitor:
+
+1. Log in to https://app.watchcat.io.
+2. Select `Monitors` from the menu on the right.
+3. Click the `Create monitor` button.
+4. Enter the URL you want to monitor.
+5. Set up additional checks, adjust the monitoring interval, or assign the monitor to an application.
