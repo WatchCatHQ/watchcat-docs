@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const config: DocsThemeConfig = {
   logo: <Image src="/watchcat_logo.svg" width={200} height={40} alt="watchcatdocs"/>,
-  docsRepositoryBase: 'https://github.com/WatchCatHQ/docs',
+  docsRepositoryBase: 'https://github.com/WatchCatHQ/watchcat-docs',
   darkMode: false,
   primaryHue: 245,
   footer: {
