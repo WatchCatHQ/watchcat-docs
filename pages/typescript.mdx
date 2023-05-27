@@ -1,1 +1,15 @@
 # Typescript
+
+Typescript is supported out-of-the-box, but there are a few details to keep in mind.
+
+## Browser
+
+Source Maps need to be generated and uploaded. For more details, see [Source Maps](/sourcemaps).
+
+## Server
+
+Source Maps need to be generated and deployed with the code. When an error occurs, the stack trace will be translated by reading the relevant Source Map from the file system.
+
+## Note on development mode
+
+When running the application in `development` mode, be aware that not every bundler/framework is fully supported and works correctly.

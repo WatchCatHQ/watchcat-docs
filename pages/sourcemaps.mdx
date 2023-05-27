@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {Tab, Tabs} from 'nextra-theme-docs'
 
 # Source Maps
 
@@ -17,17 +18,30 @@ If you don't see such files, please refer to your build tool's documentation.
 
 ## Uploading source maps
 
-The easiest way is to install the WatchCat CLI tool:
+The easiest method is to install the WatchCat CLI tool, but you can also use good ol' `curl` if you prefer.
 
-```shell
-npm install @watchcathq/cli --save-dev
-```
+<Tabs items={['CLI', 'curl']}>
+    <Tab>
+        ```shell
+        npm install @watchcathq/cli --save-dev
+        ```
 
-This tool will recursively search for maps in the specified directory and upload them for a given application, determined by the provided token. The token can be found in the application details at https://app.watchcat.io/applications.
+        This tool will recursively search for maps in the specified directory and upload them for a given application, determined by the provided token. The token can be found in the application details at https://app.watchcat.io/applications.
 
-```
-watchcat sourcemap [app_token] [directory]
-```
+        ```
+        watchcat sourcemap [app_token] [directory]
+        ```
+    </Tab>
+    <Tab>
+        ```
+        curl -X POST \
+        -H "x-watchcat-app-token: YOUR_APP_TOKEN" \
+        -H "Content-Type: multipart/form-data" \
+        -F "file=@/path/to/your/file.js.map" \
+        "https://api.watchcat.io/api/sourcemap.in"
+        ```
+    </Tab>
+</Tabs>
 
 Once the source maps are uploaded, you should see a stack trace leading to the original source, and you can quickly identify where the issue lies.
 

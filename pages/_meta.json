@@ -1,20 +1,20 @@
 {
   "index": "Introduction",
   "getting-started": "Getting started",
+  "key-concepts": "Key concepts",
   "sdks-browser": "Browser SDKs",
   "sdks-server": "Server SDKs",
   "sourcemaps": "Source Maps",
   "typescript": "Typescript",
-  "watchcat_web": {
+  "cli": "CLI",
+  "watchcat-web": {
     "title": "Go to Web",
     "href": "https://watchcat.io",
-    "type": "page",
-    "newWindow": true
+    "type": "page"
   },
-  "watchcat_app": {
+  "watchcat-app": {
     "title": "Go to App",
     "href": "https://app.watchcat.io",
-    "type": "page",
-    "newWindow": true
+    "type": "page"
   }
 }
