@@ -1,6 +1,8 @@
+import Usage from '../../../components/usage_javascript.mdx'
+
 # React SDK
 
-## Installation and Usage
+## Installation
 
 To install the package, use your preferred package manager:
 
@@ -8,8 +10,6 @@ To install the package, use your preferred package manager:
 npm install @watchcathq/react
 yarn add @watchcathq/react
 ```
-
-## Basic usage
 
 To set up the package, import it and initialize it with your application token:
 
@@ -31,25 +31,9 @@ https://reactjs.org/docs/error-boundaries.html
 </WatchCat.ErrorBoundary>
 ```
 
-## Logging
+## Logging events
 
-Use the following methods to log warnings, errors, and exceptions:
-
-```javascript
-WatchCat.warn('warning message');
-WatchCat.error('error message');
-WatchCat.exception(new Error('exception message'));
-```
-
-You can also add custom, application-related information:
-
-```javascript
-WatchCat
-    .withApplication({
-        userId: 1234
-    })
-    .error('error message');
-```
+<Usage/>
 
 ## Source Maps
 

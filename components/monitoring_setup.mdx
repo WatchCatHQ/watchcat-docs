@@ -1,0 +1,41 @@
+import { Callout } from 'nextra/components'
+
+<Callout type="warning" emoji="⚠️">
+    Setting up monitoring via code is only available for server SDKs.
+</Callout>
+
+To set up uptime monitoring through code for one or more URLs, use the `monitors` property.
+This property can take the following options:
+
+- `url` (required): This is the URL you want to monitor.
+- `httpCodes` (optional): Specify the HTTP codes to validate. The format is the same as in the UI, such as `200-204,304`.
+- `phrase` (optional): If you want to verify the presence of a particular phrase on the page, enter it here.
+- `interval` (optional): This is the test interval. The default value is 30 seconds. Other valid options include 1 minute (1m), 5 minutes (5m), 30 minutes (30m), and 1 hour (1h).
+
+
+<Callout type="info" emoji="ℹ️">
+    Monitors will be synchronized at the application start.
+</Callout>
+
+Here's an example of how to set up monitor:
+
+```javascript
+WatchCat.init({
+    token: "APP_TOKEN",
+    monitors: [
+        { url: "https://watchcat.io", httpCodes: "200-201", phrase: "watchcat", interval: "30s"}
+    ]
+})
+```
+
+Specified monitors that do not exist will be created. If you remove a monitor, it will not be deleted automatically;
+you will have to delete it manually in the UI.
+
+If you want to also delete monitors that you have removed from the code, use the `fullMonitorSync` parameter:
+
+```javascript
+WatchCat.init({
+    //...
+    fullMonitorSync: true
+})
+```

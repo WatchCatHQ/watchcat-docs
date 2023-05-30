@@ -1,6 +1,8 @@
+import Usage from '../../../components/usage_javascript.mdx'
+
 # Vue
 
-## Installation and Usage
+## Installation
 
 To install the package, use your preferred package manager:
 
@@ -33,25 +35,9 @@ app.config.errorHandler = WatchCat.errorHandler
 // app mount
 ```
 
-## Logging
+## Logging events
 
-Use the following methods to log warnings, errors, and exceptions:
-
-```javascript
-WatchCat.warn('warning message');
-WatchCat.error('error message');
-WatchCat.exception(new Error('exception message'));
-```
-
-You can also add custom, application-related information:
-
-```javascript
-WatchCat
-    .withApplication({
-        userId: 1234
-    })
-    .error('error message');
-```
+<Usage/>
 
 ## Source Maps
 
