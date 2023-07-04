@@ -1,11 +1,7 @@
 import { Callout } from 'nextra/components'
 
-<Callout type="warning" emoji="⚠️">
-    Setting up monitoring via code is only available for server SDKs.
-</Callout>
-
-To set up uptime monitoring through code for one or more URLs, use the `monitors` property.
-This property can take the following options:
+Uptime monitoring can be set up either via the application interface or directly through code. To configure uptime
+monitoring through code for one or more URLs, use the `monitors` property. This property can take the following options:
 
 - `url` (required): This is the URL you want to monitor.
 - `httpCodes` (optional): Specify the HTTP codes to validate. The format is the same as in the UI, such as `200-204,304`.
@@ -39,3 +35,7 @@ WatchCat.init({
     fullMonitorSync: true
 })
 ```
+
+<Callout type="warning" emoji="⚠️">
+    Setting up monitoring via code is only available for server SDKs.
+</Callout>
