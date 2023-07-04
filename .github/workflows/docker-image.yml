@@ -21,3 +21,10 @@ jobs:
       run: |
         docker build . --tag ghcr.io/watchcathq/watchcat-docs:build_${{ github.run_number }}
         docker push ghcr.io/watchcathq/watchcat-docs:build_${{ github.run_number }}
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_CHANNEL: watchcat
+        SLACK_COLOR: ${{ job.status }}
+        SLACK_MESSAGE: 'Docker image for ${{ github.event.repository.name }} has been built :rocket:'
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
